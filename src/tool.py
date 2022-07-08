@@ -57,21 +57,21 @@ def MeasurmentSetTarandMeta(
     largename= tarname+".set" + tarsuffix
     
     # create a highly stripped tar file(s)
-    cmd="lfs setstripe " + smallname
+    cmd=["lfs", "setstripe","smallname"]
     subp = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     ( output, errput ) = subp.communicate()
 
     # search for all small files within the directory that should contain metadata 
-    cmd="find " + set + "-type f -size -1M"
+    cmd=["find", set, "-type", "f", "-size", "-1M"]
     subp = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     ( smallfiles, errput ) = subp.communicate()
     # and all larger files 
-    cmd="find " + set + "-type f -size +1M"
+    cmd=["find", set, "-type", "f", "-size", "+1M"]
     subp = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     ( largefiles, errput ) = subp.communicate()
 
     # then generate tar files 
-    cmd="tar " + tarargs + " " + smallname + " " + smallfiles 
+    cmd=["tar", tarargs, smallname, smallfiles]
     subp = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     ( output, errput ) = subp.communicate()
 
