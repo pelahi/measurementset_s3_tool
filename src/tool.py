@@ -12,17 +12,13 @@ import casacore
 import boto3
 import pylut
 
-def LusterStriping():
-    measurement_set_default_striping=
-
-
 def MeasurementSetMeta(set: str):
     """
     @brief Extract metadata for measurement set residing on POSIX filesystem 
     
     @param set : measurement set name
     """
-    
+    meta = dict()
 
     return meta 
 

@@ -4,8 +4,10 @@ S3 Measurment Set Tools
 developed by:
 -------------
 
-    Pascal Jahan Elahi (continuously)
-    Additional contributors:
+* Pascal Jahan Elahi (continuously)
+
+Additional contributors:
+* 
 
 Content
 =======
@@ -21,5 +23,5 @@ Dependencies
 
 This tool uses `python-casacore`, `python-boto3`, `pylut`, and possibly a few other tools. 
 
-Instalation
-===========
+Installation
+============
